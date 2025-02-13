@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1 id="frontPage"></h1>
+        <p>For you 💖</p>
 
         <div class="btn">
             <a href="secondPage.html" id="funButton">Click if you hate me</a>
@@ -23,12 +24,12 @@
             if (i < text.length) {
                 document.getElementById("frontPage").innerHTML += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100); // Speed of typing
+                setTimeout(typeWriter, 100); // Typing speed
             } else {
                 setTimeout(() => {
                     document.getElementById("frontPage").innerHTML = ""; // Clear text
                     i = 0; // Reset index
-                    typeWriter(); // Restart typing animation
+                    typeWriter(); // Restart animation
                 }, 2000); // Pause before restarting
             }
         }
