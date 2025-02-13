@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Katrina Joy Bayani</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
-        <h1 id="frontPage">For Katrina Joy Bayani</h1>
+        <h1 id="frontPage"></h1>  <!-- Typing effect applied here -->
 
         <div class="btn">
-            <a href="secondPage.html">Click if you hate me</a>
+            <a href="secondPage.html" id="funButton">Click if you hate me</a>
         </div>
     </div>
+
+    <script>
+        // Typing animation for the title
+        const text = "For Katrina Joy Bayani";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("frontPage").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", typeWriter);
+    </script>
 </body>
 </html>
