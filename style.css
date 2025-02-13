@@ -13,10 +13,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
     background-size: 400% 400%;
     animation: gradientBG 8s ease infinite;
     padding: 20px; /* Added padding to prevent overflow on small screens */
+    text-align: center; /* Center text */
 }
 
 /* Background Gradient Animation */
@@ -26,31 +28,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Container with Glassmorphism Effect */
-.container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 20px;
-    width: 90%; /* Allows dynamic width */
-    max-width: 500px; /* Prevents it from getting too large */
-    padding: 40px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: float 3s ease-in-out infinite alternate;
-    word-wrap: break-word; /* Ensures long words break correctly */
-    overflow: hidden; /* Prevents content from escaping */
-}
-
-/* Floating Animation */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-10px); }
-}
-
 /* Typing Effect */
 h1, #frontPage {
     color: #e55451;
@@ -58,9 +35,10 @@ h1, #frontPage {
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 100%; /* Prevents overflow */
+    max-width: 100%;
     text-align: center;
-    word-break: break-word; /* Helps text fit */
+    word-break: break-word;
+    padding: 0 20px; /* Added padding to avoid text touching edges */
 }
 
 /* Subtitle */
@@ -68,12 +46,14 @@ p {
     font-size: 18px;
     color: white;
     opacity: 0.8;
+    margin-top: 20px; /* Space between text and subtitle */
 }
 
 /* Button Styling */
-.container .btn {
+.btn {
     display: flex;
     gap: 20px;
+    margin-top: 30px; /* Space between buttons and text */
 }
 
 .btn a {
