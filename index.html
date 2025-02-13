@@ -9,10 +9,10 @@
 <body>
     <div class="container">
         <h1 id="frontPage"></h1>
-        <p>For you 💖</p>
+        <p></p>
 
         <div class="btn">
-            <a href="secondPage.html" id="funButton">Click if you hate me</a>
+            <a href="secondPage.html">Click if you hate me</a>
         </div>
     </div>
 
@@ -24,13 +24,13 @@
             if (i < text.length) {
                 document.getElementById("frontPage").innerHTML += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100); // Typing speed
+                setTimeout(typeWriter, 100);
             } else {
                 setTimeout(() => {
                     document.getElementById("frontPage").innerHTML = ""; // Clear text
                     i = 0; // Reset index
                     typeWriter(); // Restart animation
-                }, 2000); // Pause before restarting
+                }, 2000);
             }
         }
         document.addEventListener("DOMContentLoaded", typeWriter);
