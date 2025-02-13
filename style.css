@@ -16,6 +16,7 @@ body {
     background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
     background-size: 400% 400%;
     animation: gradientBG 8s ease infinite;
+    padding: 20px; /* Added padding to prevent overflow on small screens */
 }
 
 /* Background Gradient Animation */
@@ -32,13 +33,16 @@ body {
     text-align: center;
     align-items: center;
     gap: 20px;
-    max-width: 500px;
+    width: 90%; /* Allows dynamic width */
+    max-width: 500px; /* Prevents it from getting too large */
     padding: 40px;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: float 3s ease-in-out infinite alternate;
+    word-wrap: break-word; /* Ensures long words break correctly */
+    overflow: hidden; /* Prevents content from escaping */
 }
 
 /* Floating Animation */
@@ -50,11 +54,13 @@ body {
 /* Typing Effect */
 h1, #frontPage {
     color: #e55451;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
-    overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid transparent;
+    overflow: hidden;
+    max-width: 100%; /* Prevents overflow */
+    text-align: center;
+    word-break: break-word; /* Helps text fit */
 }
 
 /* Subtitle */
@@ -76,10 +82,11 @@ p {
     background: #ff4b5c;
     padding: 12px 30px;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     transition: 0.3s;
     box-shadow: 0px 4px 15px rgba(255, 75, 92, 0.5);
+    text-align: center;
 }
 
 /* Button Glow Effect */
