@@ -1,8 +1,9 @@
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif
+    font-family: sans-serif;
 }
 
 body {
@@ -11,7 +12,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    animation: backgroundFade 5s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes backgroundFade {
+    0% { background: linear-gradient(120deg, #ff9a9e, #fad0c4); }
+    100% { background: linear-gradient(120deg, #fbc2eb, #a6c1ee); }
 }
 
 .container {
@@ -22,12 +30,23 @@ body {
     gap: 20px;
     max-width: 500px;
     margin: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-img {
-    max-width: 200px;
+/* Title Styling & Typing Effect */
+h1, #frontPage {
+    color: #e55451;
+    font-size: 60px;
+    font-weight: bold;
+    overflow: hidden; /* Hide text until typing effect */
+    white-space: nowrap;
+    border-right: 3px solid transparent;
 }
 
+/* Button Styling */
 .container .btn {
     display: flex;
     gap: 25px;
@@ -41,20 +60,30 @@ img {
     border-radius: 8px;
     box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
     font-size: 20px;
+    transition: 0.3s;
 }
 
-h1 {
-    color: #e55451;
-    font-family: yes;
-    font-size: 60px;
+/* Button Hover Animation */
+.btn a:hover {
+    background: #ff7878;
+    color: white;
+    transform: scale(1.1);
+    animation: shake 0.3s infinite alternate;
 }
 
+/* Button Shake Effect */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5px); }
+}
+
+/* Image */
+img {
+    max-width: 200px;
+}
+
+/* Text */
 p {
-    color:#e55451;
-    font-family: yes;
+    color: #e55451;
     font-size: 25px;
-}
-
-#frontPage {
-    font-size: 60px;
 }
