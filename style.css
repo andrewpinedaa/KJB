@@ -3,25 +3,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
+/* Smooth Gradient Background Animation */
 body {
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-    animation: backgroundFade 5s infinite alternate;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
 }
 
-/* Background Animation */
-@keyframes backgroundFade {
-    0% { background: linear-gradient(120deg, #ff9a9e, #fad0c4); }
-    100% { background: linear-gradient(120deg, #fbc2eb, #a6c1ee); }
+/* Background Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
+/* Container with Glassmorphism Effect */
 .container {
     display: flex;
     flex-direction: column;
@@ -29,64 +33,68 @@ body {
     align-items: center;
     gap: 20px;
     max-width: 500px;
-    margin: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 30px;
+    padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite alternate;
 }
 
-/* Title Styling & Typing Effect */
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Typing Effect */
 h1, #frontPage {
     color: #e55451;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
-    overflow: hidden; /* Hide text until typing effect */
+    overflow: hidden;
     white-space: nowrap;
     border-right: 3px solid transparent;
+}
+
+/* Subtitle */
+p {
+    font-size: 18px;
+    color: white;
+    opacity: 0.8;
 }
 
 /* Button Styling */
 .container .btn {
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 .btn a {
     text-decoration: none;
-    color: #111;
-    background: #fff;
-    padding: 10px 25px;
+    color: white;
+    background: #ff4b5c;
+    padding: 12px 30px;
     border-radius: 8px;
-    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
     font-size: 20px;
+    font-weight: bold;
     transition: 0.3s;
+    box-shadow: 0px 4px 15px rgba(255, 75, 92, 0.5);
 }
 
-/* Button Hover Effect with Shake Animation */
+/* Button Glow Effect */
 .btn a:hover {
     background: #ff7878;
-    color: white;
     transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 75, 92, 0.9);
     animation: shake 0.3s ease-in-out infinite alternate;
 }
 
 /* Shake Animation */
 @keyframes shake {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-3px); }
-    100% { transform: translateX(3px); }
-}
-
-/* Image */
-img {
-    max-width: 200px;
-}
-
-/* Text */
-p {
-    color: #e55451;
-    font-size: 25px;
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(2px); }
 }
